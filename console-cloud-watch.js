@@ -90,7 +90,7 @@
                 if (err && err.code !== 'ResourceAlreadyExistsException') {
                     console.log(err, err.stack);
                 } else {
-                    localStorage.setItem('ConsoleWatch:stream', stream);
+                    localStorage.setItem('ConsoleCloudWatch:stream', stream);
                     init();
                 }
             });
