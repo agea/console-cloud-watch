@@ -1,6 +1,6 @@
 {
   "name": "console-cloud-watch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Send your browser errors and console message to AWS CLoudWatch",
   "main": "console-cloud-watch.js",
   "scripts": {

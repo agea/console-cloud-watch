@@ -27,7 +27,7 @@
                 createStream(guid());
             } else {
                 new Fingerprint2().get(function (result, components) {
-                    createStream(stream);
+                    createStream(result);
                 });
             }
         }
