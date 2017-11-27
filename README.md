@@ -31,11 +31,10 @@ Send your browser errors and console message to AWS CLoudWatch
  ```
  - beware that the credentials will be exposed in the browser so don't assign other permissions to this user.
 
-## Get Console Watch
+## Get Console Cloud Watch
 
 ```
-npm install console-watch
-bower install console-watch
+npm install console-cloud-watch
 
 https://cdn.rawgit.com/agea/console-cloud-watch/0.0.2/dist/console-cloud-watch-all.min.js
 
