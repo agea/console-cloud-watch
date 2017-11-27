@@ -1,0 +1,26 @@
+{
+  "name": "console-watch",
+  "version": "0.0.1",
+  "description": "Send your browser errors and console message to AWS CLoudWatch",
+  "main": "consolewatch.js",
+  "scripts": {
+    "uglify": "uglifyjs consolewatch.js -c -m -o dist/consolewatch.min.js",
+    "uglify-all": "uglifyjs node_modules/stacktrace-js/dist/stacktrace.min.js node_modules/fingerprintjs2/dist/fingerprint2.min.js vendor/aws-sdk-cloudwatch-2.156.0.min.js consolewatch.js -c -m -o dist/consolewatch-all.min.js"
+  },
+  "author": {
+    "name": "Andrea Agili",
+    "email": "agea@drwolf.it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/agea/console-watch.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "fingerprintjs2": "^1.5.1",
+    "stacktrace-js": "^2.0.0"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.2.0"
+  }
+}
