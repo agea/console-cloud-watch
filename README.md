@@ -37,7 +37,7 @@ Send your browser errors and console message to AWS CLoudWatch
 npm install console-watch
 bower install console-watch
 
-https://cdn.rawgit.com/agea/console-watch/0.0.1/consolewatch-all.min.js
+https://cdn.rawgit.com/agea/console-watch/0.0.1/dist/consolewatch-all.min.js
 
 ```
 `dist/consolewatch-all.min.js` contains all the dependencies (and a custom build of AWS SDK with only the CloudWatch service), 
