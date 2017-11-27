@@ -66,7 +66,7 @@
                         logEvents: pendingEvents,
                         sequenceToken: localStorage.getItem('ConsoleCloudWatch:sequenceToken'),
                         logGroupName: group,
-                        logStreamName: stream
+                        logStreamName: localStorage.getItem('ConsoleCloudWatch:stream')
                     }, function (err, data) {
                         if (err) {
                             logEvents = pendingEvents.concat(logEvents);
