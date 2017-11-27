@@ -1,7 +1,7 @@
 (function (name, context, definition) {
     'use strict'
     if (typeof window.define === 'function' && window.define.amd) { window.define(definition) } else if (typeof module !== 'undefined' && module.exports) { module.exports = definition() } else if (context.exports) { context.exports = definition() } else { context[name] = definition() }
-})('ConsoleWatch', this, function () {
+})('ConsoleCloudWatch', this, function () {
 
     return function (aws_access_key_id, aws_secret_access_key, region, group, levels, timeout, mute) {
         var logEvents = [];
@@ -9,7 +9,7 @@
             accessKeyId: aws_access_key_id, secretAccessKey: aws_secret_access_key, region: region
         });;
 
-        var stream = localStorage.getItem('ConsoleWatch:stream');
+        var stream = localStorage.getItem('ConsoleCloudWatch:stream');
 
         if (stream) {
             init();
@@ -64,18 +64,18 @@
                 if (pendingEvents.length) {
                     cloudwatchlogs.putLogEvents({
                         logEvents: pendingEvents,
-                        sequenceToken: localStorage.getItem('ConsoleWatch:sequenceToken'),
+                        sequenceToken: localStorage.getItem('ConsoleCloudWatch:sequenceToken'),
                         logGroupName: group,
                         logStreamName: stream
                     }, function (err, data) {
                         if (err) {
                             logEvents = pendingEvents.concat(logEvents);
                             if (err.code == "InvalidSequenceTokenException") {
-                                localStorage.setItem('ConsoleWatch:sequenceToken', err.message.split('The next expected sequenceToken is: ')[1])
+                                localStorage.setItem('ConsoleCloudWatch:sequenceToken', err.message.split('The next expected sequenceToken is: ')[1])
                             }
                         }
                         if (data) {
-                            localStorage.setItem('ConsoleWatch:sequenceToken', data.nextSequenceToken)
+                            localStorage.setItem('ConsoleCloudWatch:sequenceToken', data.nextSequenceToken)
                         }
                     });
                 }

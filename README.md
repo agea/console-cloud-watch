@@ -1,4 +1,4 @@
-# Console Watch
+# Console Cloud Watch
 
 Send your browser errors and console message to AWS CLoudWatch
 
@@ -37,11 +37,11 @@ Send your browser errors and console message to AWS CLoudWatch
 npm install console-watch
 bower install console-watch
 
-https://cdn.rawgit.com/agea/console-watch/0.0.1/dist/consolewatch-all.min.js
+https://cdn.rawgit.com/agea/console-cloud-watch/0.0.2/dist/console-cloud-watch-all.min.js
 
 ```
-`dist/consolewatch-all.min.js` contains all the dependencies (and a custom build of AWS SDK with only the CloudWatch service), 
-if you already include AWS SDK you may use `dist/dist/consolewatch.min.js` directly, note that you have alsto to include `fingerprintjs2` and `stacktrace-js`
+`dist/console-cloud-watch-all.min.js` contains all the dependencies (and a custom build of AWS SDK with only the CloudWatch service), 
+if you already include AWS SDK you may use `dist/dist/console-cloud-watch.min.js` directly, note that you have alsto to include `fingerprintjs2` and `stacktrace-js`
 
 
 
@@ -49,7 +49,7 @@ if you already include AWS SDK you may use `dist/dist/consolewatch.min.js` direc
 Include `consolewatch.js` in your page, configure your parameters and you are done:
 
 ```javascript
-    ConsoleWatch(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, LOG_GROUP);
+    ConsoleCloudWatch(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, LOG_GROUP);
 ```
 
 You may also pass 3 optional configuration parameters:
@@ -60,5 +60,5 @@ You may also pass 3 optional configuration parameters:
 
 Example: 
 ```javascript
-    ConsoleWatch(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, LOG_GROUP,['warn','error'],30000,true);
+    ConsoleCloudWatch(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, LOG_GROUP,['warn','error'],30000,true);
 ```
