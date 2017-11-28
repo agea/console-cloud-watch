@@ -7,12 +7,12 @@
         var logEvents = [];
         var cloudwatchlogs = new AWS.CloudWatchLogs({
             accessKeyId: aws_access_key_id, secretAccessKey: aws_secret_access_key, region: region
-        });;
+        });
 
         var stream = localStorage.getItem('ConsoleCloudWatch:stream');
 
         if (stream) {
-            init();
+            createStream(stream);
         } else {
             if (typeof (Fingerprint2) == 'undefined') {
                 function guid() {
@@ -33,7 +33,7 @@
         }
         window.onerror = function (msg, file, line, col, error) {
             StackTrace.fromError(error).then(function (stackFrames) {
-                var stringifiedStack = msg + '\n' + file + '\n' + stackFrames.map(function (sf) {
+                var stringifiedStack = msg + '\n' + file + ':' + line + ':' + col + '\n' + stackFrames.map(function (sf) {
                     return sf.toString();
                 }).join('\n');
                 logEvents.push({
