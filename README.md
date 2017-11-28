@@ -39,7 +39,7 @@ npm install console-cloud-watch
 ```
 CDN:
 ```html
-<script src="//cdn.jsdelivr.net/npm/console-cloud-watch@0.0.5/dist/console-cloud-watch-all.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/console-cloud-watch@0.1.0/dist/console-cloud-watch-all.min.js"></script>
 ```
 `dist/console-cloud-watch-all.min.js` contains all the dependencies (and a custom build of AWS SDK with only the CloudWatch service), 
 if you already include AWS SDK you may use `dist/dist/console-cloud-watch.min.js` directly, note that you have also to include `fingerprintjs2` and `stacktrace-js`
