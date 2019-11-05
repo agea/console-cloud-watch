@@ -47,9 +47,15 @@ if you already include AWS SDK you may use `dist/dist/console-cloud-watch.min.js
 
 
 ## Usage
-Include `consolewatch.js` in your page, configure your parameters and you are done:
+Include `console-cloud-watch.js` in your page, configure your parameters and you are done. Make sure that AWS, StackTrace, and optionally Fingerprint2 have been required as well:
 
 ```javascript
+    # ES6
+    import ConsoleCloudWatch from 'console-cloud-watch';
+    # ES5
+    var ConsoleCloudWatch = require('console-cloud-watch');
+    
+
     ConsoleCloudWatch(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, LOG_GROUP);
 ```
 
